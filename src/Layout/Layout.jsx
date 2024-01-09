@@ -9,6 +9,9 @@ const user = {
   amount_received: 2392312.19,
   order: {
     id: 281209,
+    date: "2023-07-07",
+    amount: 1278.23,
+    transaction_fee: 22,
   },
 };
 

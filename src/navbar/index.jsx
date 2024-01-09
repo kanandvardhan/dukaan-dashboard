@@ -3,13 +3,13 @@ import userImage from "../assets/user/user-image.jpg";
 import { NavItem } from "./_components/nav-item";
 import credits from "./_components/assets/credits.png";
 import chevron from "./_components/assets/chevron.png";
+import git from "./_components/assets/git.png";
+
 import { useContext, useState } from "react";
 import { UserContext } from "../Layout/Layout";
 
 const Navbar = () => {
   const user = useContext(UserContext);
-  console.log(user);
-
   const [open, setOpen] = useState(true);
 
   return (
@@ -45,6 +45,14 @@ const Navbar = () => {
                 <NavItem key={i} page={page} />
               ))}
             </ul>
+          </div>
+          <div className="bg-white rounded-full cursor-pointer">
+            <a
+              href="https://github.com/kanandvardhan/dukaan-dashboard"
+              target="_blank"
+            >
+              <img width={30} height={30} src={git} />
+            </a>
           </div>
           <div className="h-[54px] px-3 py-1.5 bg-slate-700 rounded flex-col justify-start items-start gap-2.5 flex cursor-pointer">
             <div className="justify-start items-center gap-3 inline-flex">

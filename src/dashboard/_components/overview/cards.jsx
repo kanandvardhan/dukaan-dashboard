@@ -1,14 +1,9 @@
-export const Cards = () => {
-  function formatCurrency(amount) {
-    return amount.toLocaleString("en-IN", {
-      style: "currency",
-      currency: "INR",
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    });
-  }
+import { useContext } from "react";
+import { UserContext } from "../../../Layout/Layout";
+import { formatCurrency } from "../../../util/helpers";
 
-  const formattedNumber = formatCurrency(2392312.19);
+export const Cards = () => {
+  const user = useContext(UserContext);
 
   return (
     <div className="self-stretch justify-start items-start gap-5 inline-flex">
@@ -21,7 +16,7 @@ export const Cards = () => {
               </div>
             </div>
             <div className="text-zinc-900 text-[32px] font-medium font-['Inter'] leading-[38px]">
-              231
+              {user.orders}
             </div>
           </div>
         </div>
@@ -36,7 +31,7 @@ export const Cards = () => {
           <div className="self-stretch justify-start items-center gap-4 inline-flex">
             <div className="grow shrink basis-0 h-[38px] justify-between items-center flex">
               <div className="text-zinc-900 text-[32px] font-medium font-['Inter'] leading-[38px]">
-                ₹23,92,312.19
+                {formatCurrency(user.amount_received)}
               </div>
             </div>
           </div>

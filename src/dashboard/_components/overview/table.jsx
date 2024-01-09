@@ -4,8 +4,12 @@ import info from "./assets/info.png";
 import triangle from "./assets/triangle.png";
 import chevronLeft from "./assets/chevron-left.png";
 import chevronRight from "./assets/chevron-right.png";
+import { useContext } from "react";
+import { UserContext } from "../../../Layout/Layout";
+import { formatCurrency, formatDate } from "../../../util/helpers";
 
 export const Table = () => {
+  const { order } = useContext(UserContext);
   return (
     <div className="w-full px-3 pt-3 pb-6 bg-white rounded-lg shadow flex-col justify-start items-end flex">
       <div className="w-full flex-col justify-start items-end gap-3 flex">
@@ -33,17 +37,19 @@ export const Table = () => {
             </div>
           </thead>
           <tbody>
-            {[...Array(20)].map((row, index) => (
+            {[...Array(20)].map((_, i) => (
               <tr
-                key={index}
+                key={i}
                 className="grid grid-cols-4 text-center text-sm h-12 px-3 py-3.5 bg-white border-b-[1px] cursor-pointer hover:bg-gray-300/10"
               >
                 <td className="text-left text-sky-700 font-medium font-['Inter'] leading-tight">
-                  #281209
+                  #{order.id}
                 </td>
-                <td>7 July, 2023</td>
-                <td>₹1,278.23</td>
-                <td className="text-right">₹22</td>
+                <td>{formatDate(order.date)}</td>
+                <td>{formatCurrency(order.amount)}</td>
+                <td className="text-right">
+                  {formatCurrency(order.transaction_fee)}
+                </td>
               </tr>
             ))}
           </tbody>
