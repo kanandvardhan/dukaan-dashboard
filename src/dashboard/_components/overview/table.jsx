@@ -42,7 +42,7 @@ export const Table = () => {
                 key={i}
                 className="grid grid-cols-4 text-center text-sm h-12 px-3 py-3.5 bg-white border-b-[1px] cursor-pointer hover:bg-gray-300/10"
               >
-                <td className="text-left text-sky-700 font-medium font-['Inter'] leading-tight">
+                <td className="text-left text-sky-700 font-medium font-['Inter'] leading-tight hover:underline">
                   #{order.id}
                 </td>
                 <td>{formatDate(order.date)}</td>
