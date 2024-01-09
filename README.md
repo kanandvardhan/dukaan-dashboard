@@ -12,6 +12,8 @@ Check out the live demo [here](https://dukaan-dash-pay.netlify.app/).
 
 ## Screenshots
 
+<img src="public/screenshot.png" />
+
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/your-username/payments_cashfree_dashboard.git`
