@@ -3,10 +3,13 @@ import Dashboard from "../dashboard";
 import Navbar from "../navbar";
 
 const user = {
-  name: "Nishyan",
+  name: "Sai Anand",
   credits: 222.1,
   orders: 231,
   amount_received: 2392312.19,
+  order: {
+    id: 281209,
+  },
 };
 
 export const UserContext = createContext(user);
